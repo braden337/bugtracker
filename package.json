@@ -10,7 +10,8 @@
   "scripts": {
     "build": "ember build",
     "start": "ember server",
-    "test": "ember test"
+    "test": "ember test",
+    "deploy": "git subtree push --prefix dist origin gh-pages"
   },
   "repository": "",
   "engines": {
