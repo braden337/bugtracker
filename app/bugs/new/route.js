@@ -6,9 +6,11 @@ export default Ember.Route.extend({
   },
   actions: {
     save: function(model) {
+      var router = this;
       model.save().then(function() {
         console.log('Record saved');
       });
+      router.transitionTo('bugs.details', model);
     }
   }
 });

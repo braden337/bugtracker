@@ -15,11 +15,13 @@ export default Ember.Route.extend({
     },
     deleteAll: function() {
       var store = this.store;
+      var router = this;
       store.findAll('bug').then(function(bugs) {
         bugs.forEach(function(bug) {
           bug.deleteRecord();
-          bug.get('isDeleted') ? console.log('record deleted'): false;
+          (bug.get('isDeleted') ? console.log('record deleted') : console.log('something went wrong, nothing deleted'));
           bug.save();
+          router.transitionTo('bugs');
         });
       });
 
