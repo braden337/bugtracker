@@ -803,7 +803,7 @@ catch(err) {
 
 /* jshint ignore:start */
 if (!runningTests) {
-  require("bugtracker/app")["default"].create({"name":"bugtracker","version":"0.0.0+f9c3a95e"});
+  require("bugtracker/app")["default"].create({"name":"bugtracker","version":"0.0.0+5025d9ec"});
 }
 /* jshint ignore:end */
 //# sourceMappingURL=bugtracker.map
