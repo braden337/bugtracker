@@ -1,12 +1,12 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  model(params) {
+  model: function(params) {
     return this.store.findRecord('bug', params.id);
   },
   actions: {
-    displayList: function() {
-      this.transitionTo('bugs');
+    backToBug: function() {
+      window.history.go(-1);
     }
   }
 });
