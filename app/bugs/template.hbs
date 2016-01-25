@@ -1,18 +1,36 @@
-<br><br>
-{{link-to 'New' 'bugs.new' class='btn btn-success'}}
-<a {{action 'deleteAll'}} class="btn btn-warning">Delete All</a>
-<a {{action 'addBug'}} class="btn btn-info">Add bug</a>
+<div class="row">
+  <div class="col-sm-5">
+    
+    <h3>Here are the bugs:</h3>
 
-<h2>Here are the bugs:</h2>
+    {{#if model}}
+    
+    <ul class='list-group'>
+      {{#each model as |bug|}}
+        <li class='list-group-item'>
+          {{link-to bug.title "bugs.details" bug}}
+        </li>
+      {{/each}}
+    </ul>
+    
+    {{else}}
+    
+    <p>No bugs were found..</p>
+    
+    {{/if}}
 
-{{#if model}}
-<ul>
-  {{#each model as |bug|}}
-    <li>{{link-to bug.title "bugs.details" bug}}</li>
-  {{/each}}
-</ul>
-{{else}}
-<p>No bugs were found.</p>
-{{/if}}
+  </div>
 
-{{outlet}}
+  <div class="col-sm-7">
+    
+    {{outlet}}
+
+  </div>
+
+</div>
+
+
+
+
+
+

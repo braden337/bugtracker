@@ -1,4 +1,5 @@
 <h3>{{model.title}}</h3>
 <p>{{model.description}}</p>
+{{link-to 'Edit' 'bugs.edit' model class='btn btn-warning'}}
 <a {{action 'delete' model}} class="btn btn-danger">Delete</a>
 {{outlet}}
